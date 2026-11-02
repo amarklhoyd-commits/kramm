@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffe4ec">
+  <title>Our Monthsary Surprise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <div id="petalLayer" class="petal-layer" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Monthsary surprise home"><span>♡</span> our little universe</a>
+    <div class="progress-wrap" aria-label="Surprise progress"><div id="progress" class="progress"></div></div>
+    <button id="soundToggle" class="sound-toggle" type="button" aria-label="Toggle sound effects">♫ <span>Sound off</span></button>
+  </header>
+
+  <main>
+    <section class="page active" id="page1" data-page="1">
+      <div class="welcome-layout">
+        <div class="welcome-copy">
+          <p class="eyebrow">A little gift from my heart</p>
+          <h1>HELLO, MY<br><em>BEAUTIFUL LOVE!</em> <span>❤️</span></h1>
+          <p class="lead">Someone special made something special for you. Every little detail comes from my heart because you deserve all the love and happiness in the world.</p>
+          <button class="primary" id="openSurprise">OPEN MY SURPRISE <span>♥</span></button>
+          <p class="tiny-note">Made with all my love, just for you.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="halo"></div><div class="hero-heart">♥</div>
+          <div class="flower flower-one">🌹</div><div class="flower flower-two">🌷</div>
+          <div class="flower flower-three">🌸</div><div class="butterfly">🦋</div>
+          <span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page2" data-page="2">
+      <div class="step-card">
+        <span class="step-icon">🌷</span><p class="eyebrow">A tiny little check</p>
+        <h2>Before we continue, tell me your beautiful complete name, sweetheart. 💗</h2>
+        <form id="girlfriendForm" class="form">
+          <label for="girlfriendInput">Your full name</label>
+          <input id="girlfriendInput" autocomplete="name" placeholder="Type your beautiful name..." required>
+          <p class="feedback" id="girlfriendFeedback" aria-live="polite"></p>
+          <button class="primary" type="submit">THAT'S ME! 💗</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="page" id="page3" data-page="3">
+      <div class="step-card">
+        <span class="step-icon">😘</span><p class="eyebrow">One more question, baby</p>
+        <h2>LET'S SEE IF YOU REMEMBER YOUR FAVORITE BOY!</h2>
+        <h3>WHAT IS THE NAME OF YOUR BOYFRIEND? ❤️</h3>
+        <form id="boyfriendForm" class="form">
+          <label for="boyfriendInput">Your favorite boy's name</label>
+          <input id="boyfriendInput" autocomplete="off" placeholder="Type his full name..." required>
+          <p class="feedback" id="boyfriendFeedback" aria-live="polite"></p>
+          <button class="primary" type="submit">LET ME IN ❤️</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="page" id="page4" data-page="4">
+      <div class="step-card wide-card">
+        <span class="step-icon">📅</span><p class="eyebrow">A date to keep forever</p>
+        <h2>WHEN IS OUR SPECIAL DAY, MY LOVE? 🌹</h2>
+        <p class="lead centered">Every day with you is special, but this date will always have a special place in my heart.</p>
+        <form id="dateForm" class="form">
+          <label for="specialDate">Our monthsary date</label>
+          <input id="specialDate" type="date" required>
+          <div class="date-preview" id="datePreview">Our special date will appear here ♡</div>
+          <button class="primary" type="submit">SAVE OUR SPECIAL DATE</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="page" id="page5" data-page="5">
+      <div class="step-card wide-card">
+        <span class="step-icon">📸</span><p class="eyebrow">A memory worth keeping</p>
+        <h2>LET'S KEEP ONE OF OUR BEAUTIFUL MEMORIES.</h2>
+        <p class="lead centered">Choose a photo of us that makes your heart smile. ❤️</p>
+        <label class="upload-box" for="photoInput">
+          <span class="upload-icon">♡</span><strong>Choose our picture</strong>
+          <small>JPG, PNG or WEBP · up to 10 MB</small>
+          <input id="photoInput" type="file" accept="image/jpeg,image/png,image/webp">
+        </label>
+        <p class="feedback" id="photoFeedback" aria-live="polite"></p>
+        <div class="photo-preview-frame hidden" id="photoPreviewFrame"><img id="photoPreview" alt="Preview of your selected couple photo"></div>
+        <button class="primary" id="photoContinue" type="button" disabled>KEEP THIS MEMORY ❤️</button>
+      </div>
+    </section>
+
+    <section class="page" id="page6" data-page="6">
+      <div class="step-card letter-stage">
+        <span class="step-icon">💌</span><p class="eyebrow">A letter from my heart</p>
+        <h2>TAP THE ENVELOPE, MY LOVE.</h2>
+        <p class="lead centered">I have something to tell you. 💌</p>
+        <button id="envelope" class="envelope" type="button" aria-label="Open your love letter">
+          <span class="envelope-back"></span><span class="letter-paper"><span class="letter-title">My dearest baby,</span><span class="letter-preview">There are a thousand things I want you to know...</span></span>
+          <span class="envelope-flap"></span><span class="wax-seal">♥</span>
+        </button>
+        <p class="tiny-note" id="envelopeHint">Tap to open your letter</p>
+        <article id="letterContent" class="letter-content hidden">
+          <h3>My dearest baby,</h3>
+          <p>I don't know how I got so lucky to have someone like you in my life, but I promise I will never take that blessing for granted.</p>
+          <p>You make my ordinary days feel special. Your smile makes my heart happy, your presence gives me comfort, and even the smallest moments with you become memories I want to keep forever.</p>
+          <p>Thank you for staying, for loving me, for understanding me, and for being part of my life.</p>
+          <p>I know we are not perfect. We may have misunderstandings, difficult days, and moments when things aren't easy. But please remember that I will always want to understand you, choose you, and grow with you.</p>
+          <p>I don't just want to celebrate another month with you. I want to celebrate all the little moments, adventures, dreams, and beautiful years that we still have ahead of us.</p>
+          <p>I want to be the person who makes you smile when you're sad, holds your hand when life gets difficult, and reminds you every day how special you are.</p>
+          <p>You are my favorite person, my happiness, and one of the most beautiful parts of my life.</p>
+          <p class="script-line">I LOVE YOU SO MUCH, MY BABY!<br>HAPPY MONTHSARY, MY LOVE! ❤️🌹</p>
+        </article>
+        <button class="primary hidden" id="letterContinue" type="button">CONTINUE TO MY SURPRISE ❤️</button>
+      </div>
+    </section>
+
+    <section class="page" id="page7" data-page="7">
+      <div class="celebration-card">
+        <p class="eyebrow">Another chapter with you</p>
+        <h1>HAPPY MONTHSARY,<br><em>MY LOVE!</em> ❤️🌹</h1>
+        <div class="couple-photo" id="finalPhotoFrame"><img id="finalPhoto" alt="Our favorite couple memory"></div>
+        <div class="names-line"><span id="finalGirlfriend">Your beautiful name</span><b>＋</b><span id="finalBoyfriend">Your favorite boy</span></div>
+        <div class="date-ribbon" id="finalDate">Our special date</div>
+        <div class="final-letter">
+          <p>To my beautiful girlfriend,</p>
+          <h3>HAPPY MONTHSARY, MY BABY! ❤️</h3>
+          <p>I want you to know how thankful I am to have you in my life.</p>
+          <p>Thank you for making me smile, for giving me reasons to be happy, and for making my life more beautiful just by being in it.</p>
+          <p>You are someone I never want to lose. I want to keep making memories with you, laughing with you, supporting you, and loving you through every season of life.</p>
+          <p>I may not be able to give you everything in this world, but I promise to give you a heart that will always try its best to love you properly.</p>
+          <p>Whenever you feel tired, remember that you have someone who believes in you. Whenever you feel sad, remember that you have someone who wants to make you smile. Whenever you feel like the world is too heavy, I hope you remember that you don't have to face everything alone.</p>
+          <p>I want to celebrate more monthsaries with you, create more memories, experience new adventures, and make countless beautiful moments together.</p>
+          <p>No matter how many months pass, I hope you never forget how special you are to me.</p>
+          <p class="script-line">I LOVE YOU MORE THAN WORDS CAN EXPLAIN.<br>YOU ARE MY FAVORITE PERSON, MY HAPPINESS, AND MY BIGGEST BLESSING.<br>HAPPY MONTHSARY, MY BABY! ❤️🌹</p>
+        </div>
+        <button class="primary grand-button" id="lastSurprise" type="button">ONE LAST SURPRISE, MY LOVE! 🎆❤️</button>
+      </div>
+    </section>
+
+    <section class="page ultimate-page" id="page8" data-page="8">
+      <div class="ultimate-content">
+        <p class="eyebrow">For you, now and always</p>
+        <h1>HAPPY MONTHSARY,<br><em>MY BABY!</em> ❤️</h1>
+        <div class="big-heart" aria-hidden="true">♥</div>
+        <article class="ultimate-letter" id="ultimateLetter">
+          <p>My sweetest love,</p>
+          <p>If there's one thing I want you to remember today, it's how much you mean to me.</p>
+          <p>You are one of the most beautiful blessings in my life. I may not always find the perfect words to express how much I love you, but I hope my actions remind you that you are always appreciated and cherished.</p>
+          <p>Thank you for every smile, every laugh, every hug, every conversation, and every little moment we've shared.</p>
+          <p>You make me happy in ways you probably don't even realize.</p>
+          <p>I love the way you make ordinary days feel special. I love having someone I can share my thoughts with. I love knowing that somewhere in this big world, I have you.</p>
+          <p>I know our journey won't always be perfect. We might have misunderstandings, disagreements, and difficult days. But I don't want us to give up on something beautiful just because some moments are difficult.</p>
+          <p>I want us to learn from each other, grow together, and become better for each other.</p>
+          <p>I want more dates with you, more random pictures, more laughter, more hugs, more adventures, and more monthsaries.</p>
+          <p>I want to celebrate your little victories, comfort you when you're tired, and remind you how amazing you are.</p>
+          <p>If I could give you one thing, it would be the ability to see yourself through my eyes, because then you would understand just how precious and beautiful you are to me.</p>
+          <p>You deserve all the flowers in the world, all the happiness in the universe, and all the love my heart can give.</p>
+          <p>Thank you for being my girl. Thank you for being part of my story. And thank you for giving me another beautiful month to love you.</p>
+          <p class="script-line">I LOVE YOU SO MUCH, MY BABY!<br>HAPPY MONTHSARY, MY LOVE! ❤️🌹</p>
+        </article>
+        <div class="forever-reveal hidden" id="foreverReveal">
+          <p class="forever-main">IF I COULD CHOOSE ONE PERSON TO LOVE OVER AND OVER AGAIN, I WOULD ALWAYS CHOOSE YOU.</p>
+          <p>In every lifetime, in every universe, and in every version of my story, I would still look for you.</p>
+          <p>I don't need a perfect love story. I just want a beautiful story with you.</p>
+          <div class="forever-heart">♥</div>
+          <h2>YOU ARE MY FAVORITE PERSON, MY HAPPIEST PLACE, AND MY FOREVER LOVE.</h2>
+          <p class="script-line">MORE MONTHSARIES, MORE MEMORIES, MORE LAUGHTER, AND MORE LOVE WITH YOU.</p>
+          <p class="forever-signoff">FOREVER YOURS. ALWAYS AND ONLY YOU. ❤️🌹</p>
+        </div>
+        <div class="ultimate-actions">
+          <button class="secondary" id="replayFlowers" type="button">↻ REPLAY FLOWERS</button>
+          <button class="secondary" id="readAgain" type="button">♡ READ MY MESSAGE AGAIN</button>
+          <button class="secondary" id="restart" type="button">↶ START OUR SURPRISE AGAIN</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>made with love <span>♥</span> just for you</footer>
+  <script src="script.js"></script>
+</body>
+</html>
